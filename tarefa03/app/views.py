@@ -1,12 +1,16 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
-    usuarios = [
-        ,{"nome":"michael douglas", "idade": 21, "matricula":1 "cidade": "sao tome"},
-         {"nome":"michael douglas", "idade": 21, "matricula":1 "cidade": "sao tome"}
-         {"nome":"michael douglas", "idade": 21, "matricula":1 "cidade": "sao tome"},
-         {"nome":"michael douglas", "idade": 21, "matricula":1 "cidade": "sao tome"},
-         {"nome":"michael douglas", "idade": 21, "matricula":1 "cidade": "sao tome"},
-         {"nome":"michael douglas", "idade": 21, "matricula":1 "cidade": "sao tome"},]
-    return render(request, usuarios, 'index.html')
+def usuarios(request):
+    user_list = [
+        {"nome": "João Pedro", "matricula": "0001", "idade": 17, "cidade": "Riachuelo"},
+        {"nome": "Hudson", "matricula": "0002", "idade": 17, "cidade": "Boa Saúde"},
+        {"nome": "joão filho", "matricula": "0003", "idade": 18, "cidade": "Serra Caiada"},
+        {"nome": "Artur", "matricula": "0004", "idade": 17, "cidade": "Santa Maria"},
+        {"nome": "Murilo", "matricula": "0005", "idade": 17, "cidade": "são tome"},
+    ]
+            
+    context = {
+        "usuarios": user_list,
+    }
+    return render(request, "usuarios.html", context)

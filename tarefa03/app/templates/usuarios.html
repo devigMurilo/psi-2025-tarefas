@@ -6,7 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    {% for usuarios in usuarios %}{% endfor %}
-        <li> {usuarios.}
+    <ul>   
+        {% for usuarios in usuarios %}
+            <p><li> <strong>Nome Do usuario:</strong> {{ usuario.nome }}</li></p>
+            <p><li> <strong>Matricula/:</strong> {{ usuario.matricula }}</li></p>
+            <p><li> <strong>idade:</strong> {{ usuario.idade }}</li></p>
+            <p><li> <strong>cidade:</strong> {{ usuario.cidade }}</li></p>
+        {% endfor %}
+
+        <button><a href="{% url 'index' %}">Voltar</a></button>
+    </ul>      
 </body>
 </html>
